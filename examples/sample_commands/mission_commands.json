@@ -1,0 +1,95 @@
+{
+  "description": "Sample valid and adversarial UAV commands for the three-layer C2 security pipeline",
+  "valid_mission_sequence": [
+    {
+      "command_type": "TAKEOFF",
+      "parameters": {
+        "altitude": 50
+      }
+    },
+    {
+      "command_type": "GOTO",
+      "parameters": {
+        "waypoint": "WP1",
+        "x": 25,
+        "y": 40,
+        "altitude": 50,
+        "speed": 10
+      }
+    },
+    {
+      "command_type": "GOTO",
+      "parameters": {
+        "waypoint": "WP2",
+        "x": 75,
+        "y": 80,
+        "altitude": 90,
+        "speed": 15
+      }
+    },
+    {
+      "command_type": "RETURN_HOME",
+      "parameters": {}
+    },
+    {
+      "command_type": "LAND",
+      "parameters": {}
+    }
+  ],
+  "adversarial_rejected_commands": [
+    {
+      "label": "Geofence violation (x=150 > max_x=100)",
+      "command_type": "GOTO",
+      "parameters": {
+        "waypoint": "WP2",
+        "x": 150,
+        "y": 50,
+        "altitude": 50,
+        "speed": 10
+      }
+    },
+    {
+      "label": "Altitude violation (altitude=180 > max_altitude=100)",
+      "command_type": "GOTO",
+      "parameters": {
+        "waypoint": "WP2",
+        "x": 50,
+        "y": 50,
+        "altitude": 180,
+        "speed": 10
+      }
+    },
+    {
+      "label": "Speed violation (speed=35 > max_speed=15)",
+      "command_type": "GOTO",
+      "parameters": {
+        "waypoint": "WP2",
+        "x": 50,
+        "y": 50,
+        "altitude": 50,
+        "speed": 35
+      }
+    },
+    {
+      "label": "Unauthorized waypoint WP99",
+      "command_type": "GOTO",
+      "parameters": {
+        "waypoint": "WP99",
+        "x": 50,
+        "y": 50,
+        "altitude": 50,
+        "speed": 10
+      }
+    },
+    {
+      "label": "Unauthorized command verb ARM (rejected at Layer 2)",
+      "command_type": "ARM",
+      "parameters": {}
+    },
+    {
+      "label": "Policy-disallowed Layer 2 verb HOVER (rejected at Layer 3)",
+      "command_type": "HOVER",
+      "parameters": {}
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "layer1": {
+    "num_channels": 8,
+    "jammer_type": "sweep",
+    "reactive_hit_prob": 1.0,
+    "max_hop_attempts": 3,
+    "online_learning": true,
+    "seed": 42
+  },
+  "layer2": {
+    "ground_station_id": "gcs-01",
+    "uav_id": "uav-01",
+    "max_timestamp_skew_seconds": 60.0,
+    "command_timestamp_skew_seconds": 60.0,
+    "handshake_timeout_seconds": 10.0,
+    "auto_rekey_interval_messages": 1000
+  },
+  "layer3": {
+    "mission_file": "vendor/layer3_intent/intent/mission.json",
+    "schema_file": "vendor/layer3_intent/intent/intent_schema.json",
+    "auto_complete_landing": false
+  },
+  "api": {
+    "http_host": "127.0.0.1",
+    "http_port": 8765,
+    "tcp_host": "127.0.0.1",
+    "tcp_port": 8766,
+    "request_timeout_seconds": 5.0,
+    "require_api_key": false,
+    "cosys_airsim_ip": "127.0.0.1",
+    "cosys_airsim_port": 41451
+  },
+  "audit_log_file": "logs/integrated_security_audit.jsonl"
+}

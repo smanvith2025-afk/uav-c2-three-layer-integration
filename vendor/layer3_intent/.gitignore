@@ -1,0 +1,10 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Runtime security logs
+logs/*.jsonl
+
+# Virtual environments
+.venv/
+venv/

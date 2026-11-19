@@ -1,0 +1,14 @@
+# Three-Layer UAV Command & Control Security Integration Dependencies
+# Verified on Python 3.14.5 (Windows 11)
+# Note: liboqs-python requires the native liboqs shared library installed on the host.
+
+liboqs-python==0.16.0.1
+cryptography==50.0.1
+jsonschema==4.26.0
+pytest==9.1.1
+
+# Optional for Layer 2 benchmark plotting:
+# matplotlib==3.11.2
+
+# Optional on the Unreal Engine 5.8 / Cosys-AirSim teammate workstation:
+# cosysairsim
